@@ -1,7 +1,8 @@
-import { Book } from './types/Book';
+import { useNavigate } from 'react-router-dom';
+import { Book } from '../types/Book';
 import { useState, useEffect } from 'react';
 
-function BookList() {
+function BookList({ selectedCategories }: { selectedCategories: string[] }) {
   //The different useState variables we will be using
   //Each has a default value that is only changed if the server changes it
   const [books, setBooks] = useState<Book[]>([]);
@@ -9,14 +10,19 @@ function BookList() {
   const [pageNum, setPageNum] = useState<number>(1);
   const [totalPages, setTotalPages] = useState<number>(0);
   const [sortOrder, setSortOrder] = useState<string>('asc');
+  const navigate = useNavigate();
 
   useEffect(() => {
     //async and await sit and wait for changes to happen to the server
     const fetchBooks = async () => {
+      const categoryParams = selectedCategories
+        .map((cat) => `bookTypes=${encodeURIComponent(cat)}`)
+        .join('&');
+
       //The url below needs to contain the different parameters we want to specify to the controller
       //i.e. how many cards to display at a time, how many pages we need, and whether we're sorting asc or desc
       const response = await fetch(
-        `https://localhost:5000/api/Book/AllBooks?pageSize=${pageSize}&pageNum=${pageNum}&sortOrder=${sortOrder}`
+        `https://localhost:5000/api/Book/AllBooks?pageSize=${pageSize}&pageNum=${pageNum}&sortOrder=${sortOrder}${selectedCategories.length ? `&${categoryParams}` : ''}`
       );
       const data = await response.json();
       setBooks(data.books);
@@ -24,7 +30,7 @@ function BookList() {
     };
     fetchBooks();
     //The values in this array are what the page will receive if fetchBooks returns nothing (that's what I understand :))
-  }, [pageSize, pageNum, sortOrder]);
+  }, [pageSize, pageNum, sortOrder, selectedCategories]);
 
   return (
     <>
@@ -74,6 +80,12 @@ function BookList() {
                 <strong>Price: ${b.price}</strong>
               </li>
             </ul>
+            <button
+              className="btn btn-success"
+              onClick={() => navigate(`/confirm/${b.title}/${b.bookId}`)}
+            >
+              Add Book to Cart
+            </button>
           </div>
         </div>
       ))}

@@ -16,7 +16,7 @@ namespace Mission11_Graham.Controllers
         //Action that receives the parameters pageSize, pageNum, sortOrder and returns all the information accordingly
         //This json is sent to localhost:5000/api/Book/AllBooks because of the HttpGet tag we have below
         [HttpGet("AllBooks")]
-        public IActionResult GetAllBooks(int pageSize = 5, int pageNum = 1, string sortOrder = "asc")
+        public IActionResult GetAllBooks(int pageSize = 5, int pageNum = 1, string sortOrder = "", [FromQuery] List<string>? bookTypes = null)
         {
             //In order to sort the books on the frontend, we have to return queryable data
             //Then we sort the data according to sortOrder (either asc or desc)
@@ -26,10 +26,18 @@ namespace Mission11_Graham.Controllers
             {
                 query = query.OrderByDescending(x => x.Title);
             }
-            else
+            else if (sortOrder.ToLower() == "asc")
             {
                     query = query.OrderBy(x => x.Title);
             }
+
+            if (bookTypes != null && bookTypes.Any())
+            {
+                query = query.Where(b => bookTypes.Contains(b.Category));
+            }
+            
+            //Just the total count of books so we know how many pages we need
+            var totalNumBooks = query.Count();
             
             //After the data is sorted, we skip the number indicated by pageNum and return the number of records
             //indicated by pageSize
@@ -37,10 +45,7 @@ namespace Mission11_Graham.Controllers
                 .Skip((pageNum - 1) * pageSize)
                 .Take(pageSize)
                 .ToList();
-
-            //Just the total count of books so we know how many pages we need
-            var totalNumBooks = _context.Books.Count();
-
+            
             //We have to wrap the info together to be able to return it (we can technically only return
             //one thing, so we put them into one object
             var someObject = new
@@ -51,6 +56,17 @@ namespace Mission11_Graham.Controllers
 
             //Have to add ok so server doesn't freak out :)
             return Ok(someObject);
+        }
+
+        [HttpGet("GetBookTypes")]
+        public IActionResult GetBookTypes()
+        {
+            var bookTypes = _context.Books
+                .Select(b => b.Category)
+                .Distinct()
+                .ToList();
+            
+            return Ok(bookTypes);
         }
     }
 }
