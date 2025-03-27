@@ -13,6 +13,7 @@ function ConfirmationPage() {
       bookId: Number(bookId),
       title: title || 'No title found',
       price: Number(price),
+      quantity: 1,
     };
     addToCart(newItem);
     navigate('/cart');

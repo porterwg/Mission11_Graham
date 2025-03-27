@@ -13,6 +13,10 @@ function BookList({ selectedCategories }: { selectedCategories: string[] }) {
   const navigate = useNavigate();
 
   useEffect(() => {
+    setPageNum(1);
+  }, [selectedCategories]);
+
+  useEffect(() => {
     //async and await sit and wait for changes to happen to the server
     const fetchBooks = async () => {
       const categoryParams = selectedCategories
@@ -82,7 +86,9 @@ function BookList({ selectedCategories }: { selectedCategories: string[] }) {
             </ul>
             <button
               className="btn btn-success"
-              onClick={() => navigate(`/confirm/${b.title}/${b.bookId}`)}
+              onClick={() =>
+                navigate(`/confirm/${b.title}/${b.bookId}/${b.price}`)
+              }
             >
               Add Book to Cart
             </button>
