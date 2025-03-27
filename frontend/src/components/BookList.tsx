@@ -43,16 +43,18 @@ function BookList({ selectedCategories }: { selectedCategories: string[] }) {
       <label>
         {/* This label//select section lets the user change the order type between asc and desc */}
         Sort by Title:
-        <select
-          value={sortOrder}
-          onChange={(e) => {
-            setSortOrder(e.target.value);
-            setPageNum(1);
-          }}
-        >
-          <option value="asc">Ascending</option>
-          <option value="desc">Descending</option>
-        </select>
+        <div className="dropdown">
+          <select
+            value={sortOrder}
+            onChange={(e) => {
+              setSortOrder(e.target.value);
+              setPageNum(1);
+            }}
+          >
+            <option value="asc">Ascending</option>
+            <option value="desc">Descending</option>
+          </select>
+        </div>
       </label>
 
       {/* Below here are the actual cards containing the data. Each is styled with bootstrap and contains all the necessary info */}
@@ -99,43 +101,53 @@ function BookList({ selectedCategories }: { selectedCategories: string[] }) {
       {/* Below here are the pagination buttons. The number of buttons is determined by the number of pages (calculated above)
 When we are on the first page, the previous button and 1 button are disabled. The next button is disabled when we're on the 
 last page */}
-      <button disabled={pageNum === 1} onClick={() => setPageNum(pageNum - 1)}>
-        Previous
-      </button>
-
-      {/* Looping through the number of pages to dispaly the correct number of buttons */}
-      {[...Array(totalPages)].map((_, i) => (
+      <div className="btn-group btn-group-sm pagination">
         <button
-          key="{index + 1}"
-          onClick={() => setPageNum(i + 1)}
-          disabled={pageNum === i + 1}
+          className="btn btn-danger"
+          disabled={pageNum === 1}
+          onClick={() => setPageNum(pageNum - 1)}
         >
-          {i + 1}
+          Previous
         </button>
-      ))}
-      <button
-        disabled={pageNum === totalPages}
-        onClick={() => setPageNum(pageNum + 1)}
-      >
-        Next
-      </button>
+
+        {/* Looping through the number of pages to dispaly the correct number of buttons */}
+        {[...Array(totalPages)].map((_, i) => (
+          <button
+            key="{index + 1}"
+            onClick={() => setPageNum(i + 1)}
+            disabled={pageNum === i + 1}
+          >
+            {i + 1}
+          </button>
+        ))}
+        <button
+          className="btn btn-info"
+          disabled={pageNum === totalPages}
+          onClick={() => setPageNum(pageNum + 1)}
+        >
+          Next
+        </button>
+      </div>
 
       {/* Below here is the dropdown for users to choose how many results to show on a given page */}
       <br />
-      <label>
-        Results per page:
-        <select
-          value={pageSize}
-          onChange={(b) => {
-            setPageSize(Number(b.target.value));
-            setPageNum(1);
-          }}
-        >
-          <option value="5">5</option>
-          <option value="10">10</option>
-          <option value="20">20</option>
-        </select>
-      </label>
+      <div className="label">
+        <label className="label-danger">
+          Results per page:
+          <select
+            className="form-select form-select-sm"
+            value={pageSize}
+            onChange={(b) => {
+              setPageSize(Number(b.target.value));
+              setPageNum(1);
+            }}
+          >
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="20">20</option>
+          </select>
+        </label>
+      </div>
     </>
   );
 }
