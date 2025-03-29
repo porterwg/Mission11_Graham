@@ -5,6 +5,7 @@ import BooksPage from './pages/BooksPage';
 import ConfirmationPage from './pages/ConfirmationPage';
 import CartPage from './pages/CartPage';
 
+//this is where everything runs :)
 function App() {
   return (
     <>

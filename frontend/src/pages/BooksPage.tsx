@@ -4,6 +4,7 @@ import CartSummary from '../components/CartSummary';
 import CategoryFilter from '../components/CategoryFilter';
 import WelcomeBand from '../components/WelcomeBand';
 
+//Page that holds the list of books w/ functionality & ability to filter by category
 function BooksPage() {
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
 

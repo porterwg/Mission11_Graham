@@ -1,6 +1,8 @@
 import { createContext, ReactNode, useContext, useState } from 'react';
 import { CartItem } from '../types/CartItem';
 
+//Context file that allows us to interact with the cart across different pages
+//Provides the functions to add to the cart, remove an item from the cart, and clear the cart entirely
 interface CartContextType {
   cart: CartItem[];
   addToCart: (item: CartItem) => void;
@@ -17,7 +19,13 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     setCart((prevCart) => {
       const existingItem = prevCart.find((b) => b.bookId === item.bookId);
       const updatedCart = prevCart.map((b) =>
-        b.bookId === item.bookId ? { ...b, price: b.price + item.price } : b
+        b.bookId === item.bookId
+          ? {
+              ...b,
+              price: b.price + item.price,
+              quantity: b.quantity + item.quantity,
+            }
+          : b
       );
       return existingItem ? updatedCart : [...prevCart, item];
     });

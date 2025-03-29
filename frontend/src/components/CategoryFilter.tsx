@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 
+//This is the actual filter component that lets users filter by category. We did this in the videos so it should be pretty self explanatory
 function CategoryFilter({
   selectedCategories,
   setSelectedCategories,

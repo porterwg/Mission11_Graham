@@ -3,6 +3,7 @@ import { useCart } from '../context/CartContext';
 import WelcomeBand from '../components/WelcomeBand';
 import { CartItem } from '../types/CartItem';
 
+//A little page in between the main page and the cart to make sure the customer actually wants to add the item to the cart
 function ConfirmationPage() {
   const navigate = useNavigate();
   const { title, bookId, price } = useParams();

@@ -2,6 +2,8 @@ import { useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import { CartItem } from '../types/CartItem';
 
+//Page that actually shows what is in our cart w/ quantity, subtotal, and a total at the bottom
+//Will eventually allow users to checkout items as well
 function CartPage() {
   const navigate = useNavigate();
   const { cart, removeFromCart } = useCart();
