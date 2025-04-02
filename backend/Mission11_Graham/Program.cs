@@ -21,7 +21,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowReactApp",
         policy =>
         {
-            policy.WithOrigins("http://localhost:3000") // React frontend will always be on port 3000
+            policy.AllowAnyOrigin() // React frontend will always be on port 3000
                 .AllowAnyMethod()
                 .AllowAnyHeader();
         });

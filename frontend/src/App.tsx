@@ -4,6 +4,7 @@ import { CartProvider } from './context/CartContext';
 import BooksPage from './pages/BooksPage';
 import ConfirmationPage from './pages/ConfirmationPage';
 import CartPage from './pages/CartPage';
+import AdminBooksPage from './pages/AdminBooksPage';
 
 //this is where everything runs :)
 function App() {
@@ -19,6 +20,7 @@ function App() {
               element={<ConfirmationPage />}
             />
             <Route path="/cart" element={<CartPage />} />
+            <Route path="/admin" element={<AdminBooksPage />} />
           </Routes>
         </Router>
       </CartProvider>

@@ -243,6 +243,7 @@
 /Users/portergraham/Library/CloudStorage/OneDrive-BrighamYoungUniversity/IS 413/Mission11_Graham/backend/Mission11_Graham/obj/Debug/net8.0/Mission11_Graham.csproj.CoreCompileInputs.cache
 /Users/portergraham/Library/CloudStorage/OneDrive-BrighamYoungUniversity/IS 413/Mission11_Graham/backend/Mission11_Graham/obj/Debug/net8.0/Mission11_Graham.MvcApplicationPartsAssemblyInfo.cs
 /Users/portergraham/Library/CloudStorage/OneDrive-BrighamYoungUniversity/IS 413/Mission11_Graham/backend/Mission11_Graham/obj/Debug/net8.0/Mission11_Graham.MvcApplicationPartsAssemblyInfo.cache
+/Users/portergraham/Library/CloudStorage/OneDrive-BrighamYoungUniversity/IS 413/Mission11_Graham/backend/Mission11_Graham/obj/Debug/net8.0/Mission11_Graham.sourcelink.json
 /Users/portergraham/Library/CloudStorage/OneDrive-BrighamYoungUniversity/IS 413/Mission11_Graham/backend/Mission11_Graham/obj/Debug/net8.0/staticwebassets.build.json
 /Users/portergraham/Library/CloudStorage/OneDrive-BrighamYoungUniversity/IS 413/Mission11_Graham/backend/Mission11_Graham/obj/Debug/net8.0/staticwebassets.development.json
 /Users/portergraham/Library/CloudStorage/OneDrive-BrighamYoungUniversity/IS 413/Mission11_Graham/backend/Mission11_Graham/obj/Debug/net8.0/staticwebassets/msbuild.Mission11_Graham.Microsoft.AspNetCore.StaticWebAssets.props
@@ -257,4 +258,3 @@
 /Users/portergraham/Library/CloudStorage/OneDrive-BrighamYoungUniversity/IS 413/Mission11_Graham/backend/Mission11_Graham/obj/Debug/net8.0/Mission11_Graham.pdb
 /Users/portergraham/Library/CloudStorage/OneDrive-BrighamYoungUniversity/IS 413/Mission11_Graham/backend/Mission11_Graham/obj/Debug/net8.0/Mission11_Graham.genruntimeconfig.cache
 /Users/portergraham/Library/CloudStorage/OneDrive-BrighamYoungUniversity/IS 413/Mission11_Graham/backend/Mission11_Graham/obj/Debug/net8.0/ref/Mission11_Graham.dll
-/Users/portergraham/Library/CloudStorage/OneDrive-BrighamYoungUniversity/IS 413/Mission11_Graham/backend/Mission11_Graham/obj/Debug/net8.0/Mission11_Graham.sourcelink.json
