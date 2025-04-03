@@ -20,7 +20,7 @@ function App() {
               element={<ConfirmationPage />}
             />
             <Route path="/cart" element={<CartPage />} />
-            <Route path="/admin" element={<AdminBooksPage />} />
+            <Route path="/adminbooks" element={<AdminBooksPage />} />
           </Routes>
         </Router>
       </CartProvider>

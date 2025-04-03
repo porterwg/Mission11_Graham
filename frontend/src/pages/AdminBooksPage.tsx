@@ -1,4 +1,4 @@
-import { use, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { deleteBook, fetchBooks } from '../api/BooksAPI';
 import { Book } from '../types/Book';
 import Pagination from '../components/Pagination';
@@ -85,7 +85,6 @@ const AdminBooksPage = () => {
       <table className="table table-bordered table-striped">
         <thead className="table-dark">
           <tr>
-            <th>ID</th>
             <th>Title</th>
             <th>Author</th>
             <th>Publisher</th>

@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { Book } from '../types/Book';
 import { useState, useEffect } from 'react';
+import { fetchBooks } from '../api/BooksAPI';
 
 function BookList({ selectedCategories }: { selectedCategories: string[] }) {
   //The different useState variables we will be using
@@ -11,30 +12,33 @@ function BookList({ selectedCategories }: { selectedCategories: string[] }) {
   const [totalPages, setTotalPages] = useState<number>(0);
   const [sortOrder, setSortOrder] = useState<string>('asc');
   const navigate = useNavigate();
+  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setPageNum(1);
-  }, [selectedCategories]);
+    const loadBooks = async () => {
+      try {
+        setLoading(true);
+        const data = await fetchBooks(
+          pageSize,
+          pageNum,
+          selectedCategories,
+          sortOrder
+        );
 
-  useEffect(() => {
-    //async and await sit and wait for changes to happen to the server
-    const fetchBooks = async () => {
-      const categoryParams = selectedCategories
-        .map((cat) => `bookTypes=${encodeURIComponent(cat)}`)
-        .join('&');
-
-      //The url below needs to contain the different parameters we want to specify to the controller
-      //i.e. how many cards to display at a time, how many pages we need, and whether we're sorting asc or desc
-      const response = await fetch(
-        `https://localhost:5000/api/Book/AllBooks?pageSize=${pageSize}&pageNum=${pageNum}&sortOrder=${sortOrder}${selectedCategories.length ? `&${categoryParams}` : ''}`
-      );
-      const data = await response.json();
-      setBooks(data.books);
-      setTotalPages(Math.ceil(data.totalNumBooks / pageSize));
+        setBooks(data.books);
+        setTotalPages(Math.ceil(data.totalNumBooks / pageSize));
+      } catch (error) {
+        setError((error as Error).message);
+      } finally {
+        setLoading(false);
+      }
     };
-    fetchBooks();
-    //The values in this array are what the page will receive if fetchBooks returns nothing (that's what I understand :))
-  }, [pageSize, pageNum, sortOrder, selectedCategories]);
+    loadBooks();
+  }, [pageSize, pageNum, selectedCategories, sortOrder]);
+
+  if (loading) return <p>Loading Projects...</p>;
+  if (error) return <p className="test-red-500">Error: {error}</p>;
 
   return (
     <>
@@ -113,7 +117,7 @@ last page */}
         {/* Looping through the number of pages to dispaly the correct number of buttons */}
         {[...Array(totalPages)].map((_, i) => (
           <button
-            key="{index + 1}"
+            key={i + 1}
             onClick={() => setPageNum(i + 1)}
             disabled={pageNum === i + 1}
           >
