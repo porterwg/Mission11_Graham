@@ -258,3 +258,4 @@
 /Users/portergraham/Library/CloudStorage/OneDrive-BrighamYoungUniversity/IS 413/Mission11_Graham/backend/Mission11_Graham/obj/Debug/net8.0/Mission11_Graham.pdb
 /Users/portergraham/Library/CloudStorage/OneDrive-BrighamYoungUniversity/IS 413/Mission11_Graham/backend/Mission11_Graham/obj/Debug/net8.0/Mission11_Graham.genruntimeconfig.cache
 /Users/portergraham/Library/CloudStorage/OneDrive-BrighamYoungUniversity/IS 413/Mission11_Graham/backend/Mission11_Graham/obj/Debug/net8.0/ref/Mission11_Graham.dll
+/Users/portergraham/Library/CloudStorage/OneDrive-BrighamYoungUniversity/IS 413/Mission11_Graham/backend/Mission11_Graham/bin/Debug/net8.0/Bookstore.sqlite
