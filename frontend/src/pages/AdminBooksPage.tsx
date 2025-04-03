@@ -81,7 +81,23 @@ const AdminBooksPage = () => {
           }}
           onCancel={() => setEditing(null)}
         />
-      )}
+      )}{' '}
+      <label>
+        {/* This label//select section lets the user change the order type between asc and desc */}
+        Sort by Title:
+        <div className="dropdown">
+          <select
+            value={sortOrder}
+            onChange={(e) => {
+              setSortOrder(e.target.value);
+              setPageNum(1);
+            }}
+          >
+            <option value="asc">Ascending</option>
+            <option value="desc">Descending</option>
+          </select>
+        </div>
+      </label>
       <table className="table table-bordered table-striped">
         <thead className="table-dark">
           <tr>
