@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Mission11_Graham")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1a86c76a0b7e34a1abe707e80e3c88fbad983528")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fc036dc6dfaddd712a4c95feb3da292e60d940cc")]
 [assembly: System.Reflection.AssemblyProductAttribute("Mission11_Graham")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Mission11_Graham")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

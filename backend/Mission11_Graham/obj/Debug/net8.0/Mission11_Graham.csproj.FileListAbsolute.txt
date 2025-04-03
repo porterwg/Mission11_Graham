@@ -1,5 +1,6 @@
 /Users/portergraham/Library/CloudStorage/OneDrive-BrighamYoungUniversity/IS 413/Mission11_Graham/backend/Mission11_Graham/bin/Debug/net8.0/appsettings.Development.json
 /Users/portergraham/Library/CloudStorage/OneDrive-BrighamYoungUniversity/IS 413/Mission11_Graham/backend/Mission11_Graham/bin/Debug/net8.0/appsettings.json
+/Users/portergraham/Library/CloudStorage/OneDrive-BrighamYoungUniversity/IS 413/Mission11_Graham/backend/Mission11_Graham/bin/Debug/net8.0/Bookstore.sqlite
 /Users/portergraham/Library/CloudStorage/OneDrive-BrighamYoungUniversity/IS 413/Mission11_Graham/backend/Mission11_Graham/bin/Debug/net8.0/Mission11_Graham
 /Users/portergraham/Library/CloudStorage/OneDrive-BrighamYoungUniversity/IS 413/Mission11_Graham/backend/Mission11_Graham/bin/Debug/net8.0/Mission11_Graham.deps.json
 /Users/portergraham/Library/CloudStorage/OneDrive-BrighamYoungUniversity/IS 413/Mission11_Graham/backend/Mission11_Graham/bin/Debug/net8.0/Mission11_Graham.runtimeconfig.json
@@ -258,4 +259,3 @@
 /Users/portergraham/Library/CloudStorage/OneDrive-BrighamYoungUniversity/IS 413/Mission11_Graham/backend/Mission11_Graham/obj/Debug/net8.0/Mission11_Graham.pdb
 /Users/portergraham/Library/CloudStorage/OneDrive-BrighamYoungUniversity/IS 413/Mission11_Graham/backend/Mission11_Graham/obj/Debug/net8.0/Mission11_Graham.genruntimeconfig.cache
 /Users/portergraham/Library/CloudStorage/OneDrive-BrighamYoungUniversity/IS 413/Mission11_Graham/backend/Mission11_Graham/obj/Debug/net8.0/ref/Mission11_Graham.dll
-/Users/portergraham/Library/CloudStorage/OneDrive-BrighamYoungUniversity/IS 413/Mission11_Graham/backend/Mission11_Graham/bin/Debug/net8.0/Bookstore.sqlite
